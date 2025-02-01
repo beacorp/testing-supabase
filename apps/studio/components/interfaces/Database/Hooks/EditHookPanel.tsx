@@ -192,16 +192,22 @@ const EditHookPanel = ({ visible, selectedHook, onClose }: EditHookPanelProps) =
       return toast.error('Unable to find selected table')
     }
 
+    // Create headers object with escaped values
     const headers = httpHeaders
       .filter((header) => header.name && header.value)
       .reduce((a: any, b: any) => {
-        a[b.name] = b.value
+        // Escape any quotation marks in the value
+        const escapedValue = b.value.replace(/"/g, '\\"')
+        a[b.name] = escapedValue
         return a
       }, {})
+    // Create parameters object with escaped values
     const parameters = httpParameters
       .filter((param) => param.name && param.value)
       .reduce((a: any, b: any) => {
-        a[b.name] = b.value
+        // Escape any quotation marks in the value
+        const escapedValue = b.value.replace(/"/g, '\\"')
+        a[b.name] = escapedValue
         return a
       }, {})
 

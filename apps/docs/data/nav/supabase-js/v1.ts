@@ -42,11 +42,7 @@ const Nav = [
         url: '/reference/javascript/v1/auth-api-generatelink',
         items: [],
       },
-      {
-        name: 'inviteUserByEmail()',
-        url: '/reference/javascript/v1/auth-api-inviteuserbyemail',
-        items: [],
-      },
+
       {
         name: 'sendMobileOTP()',
         url: '/reference/javascript/v1/auth-api-sendmobileotp',

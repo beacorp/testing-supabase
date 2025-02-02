@@ -1402,7 +1402,7 @@ class StorageExplorerStore {
         index
       )
     } catch (error: any) {
-      if (!error.message.includes('aborted')) {
+      if (!(error instanceof DOMException && error.name === 'AbortError')) {
         toast.error(`Failed to retrieve folder contents from "${folderName}": ${error.message}`)
       }
     }
@@ -1443,7 +1443,7 @@ class StorageExplorerStore {
         return col
       })
     } catch (error: any) {
-      if (!error.message.includes('aborted')) {
+      if (!(error instanceof DOMException && error.name === 'AbortError')) {
         toast.error(`Failed to retrieve more folder contents: ${error.message}`)
       }
     }

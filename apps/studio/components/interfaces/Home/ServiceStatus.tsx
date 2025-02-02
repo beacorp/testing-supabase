@@ -166,7 +166,8 @@ const ServiceStatus = () => {
   ]
 
   const isLoadingChecks = services.some((service) => service.isLoading)
-  const allServicesOperational = services.every((service) => service.isSuccess)
+  // Project status supercedes individual service checks
+  const allServicesOperational = project?.status === 'ACTIVE_HEALTHY' ? services.every((service) => service.isSuccess) : false
 
   // If the project is less than 5 minutes old, and status is not operational, then it's likely the service is still starting up
   const isProjectNew =

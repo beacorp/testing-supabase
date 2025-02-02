@@ -10,24 +10,7 @@ const EmptyListState = ({ title, description }: { title: string; description: st
     "
     >
       <div className="flex flex-col gap-1">
-        <div className="relative flex h-4 w-32 items-center justify-center rounded border border-dashed px-2">
-          <div className="absolute -bottom-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8 13v.5a4 4 0 0 0 8 0V13M9 10h.01M15 10h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
-              />
-            </svg>
-          </div>
-        </div>
+        <div className="flex h-4 w-32 items-center justify-center rounded border border-dashed px-2" />
       </div>
       <div className="flex flex-col gap-1 px-5">
         <h3 className="text-foreground text-sm">{title}</h3>

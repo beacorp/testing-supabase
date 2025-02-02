@@ -10,7 +10,6 @@ import { MoveQueryModal } from 'components/interfaces/SQLEditor/MoveQueryModal'
 import RenameQueryModal from 'components/interfaces/SQLEditor/RenameQueryModal'
 import { untitledSnippetTitle } from 'components/interfaces/SQLEditor/SQLEditor.constants'
 import { createSqlSnippetSkeletonV2 } from 'components/interfaces/SQLEditor/SQLEditor.utils'
-import { useContentCountQuery } from 'data/content/content-count-query'
 import { useContentDeleteMutation } from 'data/content/content-delete-mutation'
 import { getContentById } from 'data/content/content-id-query'
 import { useContentUpsertMutation } from 'data/content/content-upsert-mutation'
@@ -166,12 +165,7 @@ export const SQLEditorNav = ({
   )
   const folders = useSnippetFolders(projectRef as string)
 
-  const { data: snippetCountData } = useContentCountQuery({
-    projectRef,
-    type: 'sql',
-    name: debouncedSearchText,
-  })
-  const numPrivateSnippets = snippetCountData?.private ?? 0
+  const numPrivateSnippets = privateSnippets.length
 
   const privateSnippetsTreeState = useMemo(
     () =>

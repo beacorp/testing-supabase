@@ -195,13 +195,15 @@ const EditHookPanel = ({ visible, selectedHook, onClose }: EditHookPanelProps) =
     const headers = httpHeaders
       .filter((header) => header.name && header.value)
       .reduce((a: any, b: any) => {
-        a[b.name] = b.value
+        // Properly escape values that may contain quotes
+        a[b.name] = JSON.stringify(b.value).slice(1, -1)
         return a
       }, {})
     const parameters = httpParameters
       .filter((param) => param.name && param.value)
       .reduce((a: any, b: any) => {
-        a[b.name] = b.value
+        // Properly escape values that may contain quotes
+        a[b.name] = JSON.stringify(b.value).slice(1, -1)
         return a
       }, {})
 

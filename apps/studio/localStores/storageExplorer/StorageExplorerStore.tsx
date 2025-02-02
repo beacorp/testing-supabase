@@ -883,6 +883,26 @@ class StorageExplorerStore {
   abortUploads = (toastId: string | number) => {
     this.abortUploadCallbacks[toastId].forEach((callback) => callback())
     this.abortUploadCallbacks[toastId] = []
+    
+    // Mark all loading rows in the latest column as ready since they were aborted
+    const latestColumnIndex = this.getLatestColumnIndex()
+    const latestColumn = this.columns[latestColumnIndex]
+    if (latestColumn) {
+      this.columns = this.columns.map((col, idx) => {
+        if (idx === latestColumnIndex) {
+          return {
+            ...col,
+            items: col.items.map((item) => {
+              if (item.status === STORAGE_ROW_STATUS.LOADING) {
+                return { ...item, status: STORAGE_ROW_STATUS.READY }
+              }
+              return item
+            })
+          }
+        }
+        return col
+      })
+    }
   }
 
   moveFiles = async (newPathToFile: string) => {
@@ -1382,7 +1402,7 @@ class StorageExplorerStore {
         index
       )
     } catch (error: any) {
-      if (!error.message.includes('aborted')) {
+      if (!(error instanceof DOMException && error.name === 'AbortError')) {
         toast.error(`Failed to retrieve folder contents from "${folderName}": ${error.message}`)
       }
     }
@@ -1423,7 +1443,7 @@ class StorageExplorerStore {
         return col
       })
     } catch (error: any) {
-      if (!error.message.includes('aborted')) {
+      if (!(error instanceof DOMException && error.name === 'AbortError')) {
         toast.error(`Failed to retrieve more folder contents: ${error.message}`)
       }
     }

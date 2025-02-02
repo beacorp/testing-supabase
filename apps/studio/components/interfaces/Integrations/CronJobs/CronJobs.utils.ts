@@ -95,9 +95,9 @@ export const parseCronJobCommand = (originalCommand: string): CronJobType => {
     }
   }
 
-  if (command.toLocaleLowerCase().startsWith('call ')) {
+  if (command.toLocaleLowerCase().startsWith('call ') || command.toLocaleLowerCase().startsWith('select ')) {
     const [schemaName, functionName] = command
-      .replace('CALL ', '')
+      .replace(/^(CALL|SELECT)\s+/, '')
       .replace('()', '')
       .trim()
       .split('.')

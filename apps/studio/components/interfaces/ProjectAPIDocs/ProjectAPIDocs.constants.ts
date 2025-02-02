@@ -293,29 +293,7 @@ curl -X POST '${endpoint}/auth/v1/logout' \\
 -H "Authorization: Bearer USER_TOKEN"
     `,
   },
-  emailInvite: {
-    key: 'email-invite',
-    category: 'user-management',
-    title: `Invite user over email`,
-    description: `
-Send a user a passwordless link which they can use to sign up and log in.
 
-After they have clicked the link, all interactions using the Supabase JS client will be performed as "that user".
-
-This endpoint requires you use the \`service_role_key\` when initializing the client, and should only be invoked from the server, never from the client.`,
-    js: (apikey?: string, endpoint?: string) => `
-const { data, error } = await supabase.auth.api.inviteUserByEmail('someone@email.com')
-    `,
-    bash: (apikey?: string, endpoint?: string) => `
-curl -X POST '${endpoint}/auth/v1/invite' \\
--H "apikey: ${apikey}" \\
--H "Authorization: Bearer ${apikey}" \\
--H "Content-Type: application/json" \\
--d '{
-  "email": "someone@email.com"
-}'
-    `,
-  },
   // Storage
   storage: {
     key: 'storage',

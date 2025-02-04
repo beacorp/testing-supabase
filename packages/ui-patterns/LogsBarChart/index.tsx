@@ -47,6 +47,9 @@ export const LogsBarChart = ({
             error_count: {
               label: 'Errors',
             },
+            warning_count: {
+              label: 'Warnings',
+            },
             ok_count: {
               label: 'Ok',
             },

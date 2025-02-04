@@ -18,12 +18,14 @@ export function getQueryClient() {
         queries: {
           staleTime: 60 * 1000, // 1 minute
           retry: (failureCount, error) => {
-            // Don't retry on 404s
+            // Don't retry on any 4xx errors
             if (
               typeof error === 'object' &&
               error !== null &&
               'code' in error &&
-              (error as any).code === 404
+              typeof (error as any).code === 'number' &&
+              (error as any).code >= 400 &&
+              (error as any).code < 500
             ) {
               return false
             }

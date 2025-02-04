@@ -8,7 +8,8 @@ export default function LogsBarChartDemo() {
     return {
       timestamp: date.toISOString(),
       ok_count: Math.floor(Math.random() * 100), // Random value 0-99
-      error_count: Math.floor(Math.random() * 50), // Random value 0-50
+      warning_count: Math.floor(Math.random() * 30), // Random value 0-29
+      error_count: Math.floor(Math.random() * 20), // Random value 0-19
     }
   }).reverse()
 

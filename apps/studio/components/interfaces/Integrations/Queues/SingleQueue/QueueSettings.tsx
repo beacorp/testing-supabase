@@ -38,9 +38,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-  Tooltip_Shadcn_,
-  TooltipContent_Shadcn_,
-  TooltipTrigger_Shadcn_,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
 } from 'ui'
 import ShimmeringLoader from 'ui-patterns/ShimmeringLoader'
 import { useQueuesExposePostgrestStatusQuery } from 'data/database-queues/database-queues-expose-postgrest-status-query'
@@ -286,13 +286,13 @@ export const QueueSettings = ({}: QueueSettingsProps) => {
                   const relatedFunctions = getQueueFunctionsMapping(x)
                   return (
                     <TableHead key={x}>
-                      <Tooltip_Shadcn_>
-                        <TooltipTrigger_Shadcn_ className="mx-auto flex items-center gap-x-1 capitalize text-foreground-light font-normal">
+                      <Tooltip>
+                        <TooltipTrigger className="mx-auto flex items-center gap-x-1 capitalize text-foreground-light font-normal">
                           {x}
                           {isExposed && <HelpCircle size={14} strokeWidth={1.5} />}
-                        </TooltipTrigger_Shadcn_>
+                        </TooltipTrigger>
                         {isExposed && (
-                          <TooltipContent_Shadcn_
+                          <TooltipContent
                             side="bottom"
                             className="w-64 flex flex-col gap-y-1"
                           >
@@ -308,9 +308,9 @@ export const QueueSettings = ({}: QueueSettingsProps) => {
                                 <code key={`${x}_${y}`}>{y}</code>
                               ))}
                             </div>
-                          </TooltipContent_Shadcn_>
+                          </TooltipContent>
                         )}
-                      </Tooltip_Shadcn_>
+                      </Tooltip>
                     </TableHead>
                   )
                 })}

@@ -10,9 +10,9 @@ import { useProfile } from 'lib/profile'
 import {
   Button,
   Loading,
-  TooltipContent_Shadcn_,
-  TooltipTrigger_Shadcn_,
-  Tooltip_Shadcn_,
+  TooltipContent,
+  TooltipTrigger,
+  Tooltip,
 } from 'ui'
 import { MemberRow } from './MemberRow'
 import { Admonition } from 'ui-patterns'
@@ -91,8 +91,8 @@ const MembersView = ({ searchString }: MembersViewProps) => {
                 </Table.th>,
                 <Table.th key="header-role" className="flex items-center space-x-1">
                   <span>Role</span>
-                  <Tooltip_Shadcn_>
-                    <TooltipTrigger_Shadcn_ asChild>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
                       <Button asChild type="text" className="px-1">
                         <a
                           target="_blank"
@@ -102,11 +102,11 @@ const MembersView = ({ searchString }: MembersViewProps) => {
                           <HelpCircle size={14} className="text-foreground-light" />
                         </a>
                       </Button>
-                    </TooltipTrigger_Shadcn_>
-                    <TooltipContent_Shadcn_ side="bottom">
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom">
                       How to configure access control?
-                    </TooltipContent_Shadcn_>
-                  </Tooltip_Shadcn_>
+                    </TooltipContent>
+                  </Tooltip>
                 </Table.th>,
                 <Table.th key="header-action" />,
               ]}

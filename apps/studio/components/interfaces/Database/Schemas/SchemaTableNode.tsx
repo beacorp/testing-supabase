@@ -2,7 +2,7 @@ import { DiamondIcon, ExternalLink, Fingerprint, Hash, Key, Link2, Table2 } from
 import { Handle, NodeProps } from 'reactflow'
 import Link from 'next/link'
 
-import { Button, cn, Tooltip_Shadcn_, TooltipContent_Shadcn_, TooltipTrigger_Shadcn_ } from 'ui'
+import { Button, cn, Tooltip, TooltipContent, TooltipTrigger } from 'ui'
 
 // ReactFlow is scaling everything by the factor of 2
 const TABLE_NODE_WIDTH = 320

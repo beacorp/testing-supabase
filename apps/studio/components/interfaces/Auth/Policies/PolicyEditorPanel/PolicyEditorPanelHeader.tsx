@@ -9,9 +9,9 @@ import {
   SheetClose,
   SheetHeader,
   SheetTitle,
-  TooltipContent_Shadcn_,
-  TooltipTrigger_Shadcn_,
-  Tooltip_Shadcn_,
+  TooltipContent,
+  TooltipTrigger,
+  Tooltip,
   cn,
 } from 'ui'
 
@@ -103,8 +103,8 @@ export const PolicyEditorPanelHeader = ({
           )}
         </div>
       </div>
-      <Tooltip_Shadcn_>
-        <TooltipTrigger_Shadcn_ asChild>
+      <Tooltip>
+        <TooltipTrigger asChild>
           <button
             aria-expanded={showTools}
             aria-controls="ai-chat-assistant"
@@ -120,11 +120,11 @@ export const PolicyEditorPanelHeader = ({
               <PanelRightClose size={19} strokeWidth={1} />
             )}
           </button>
-        </TooltipTrigger_Shadcn_>
-        <TooltipContent_Shadcn_ side="left">
+        </TooltipTrigger>
+        <TooltipContent side="left">
           {showTools ? 'Hide' : 'Show'} tools
-        </TooltipContent_Shadcn_>
-      </Tooltip_Shadcn_>
+        </TooltipContent>
+      </Tooltip>
     </SheetHeader>
   )
 }

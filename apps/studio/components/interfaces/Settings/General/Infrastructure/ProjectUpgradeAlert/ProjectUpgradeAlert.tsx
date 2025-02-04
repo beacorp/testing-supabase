@@ -34,9 +34,9 @@ import {
   SelectTrigger_Shadcn_,
   SelectValue_Shadcn_,
   Select_Shadcn_,
-  TooltipContent_Shadcn_,
-  TooltipTrigger_Shadcn_,
-  Tooltip_Shadcn_,
+  TooltipContent,
+  TooltipTrigger,
+  Tooltip,
 } from 'ui'
 import { FormItemLayout } from 'ui-patterns/form/FormItemLayout/FormItemLayout'
 import { useDiskAttributesQuery } from 'data/config/disk-attributes-query'
@@ -139,8 +139,8 @@ const ProjectUpgradeAlert = () => {
           <p className="mb-3">
             The latest version of Postgres ({latestPgVersion}) is available for your project.
           </p>
-          <Tooltip_Shadcn_>
-            <TooltipTrigger_Shadcn_ asChild>
+          <Tooltip>
+            <TooltipTrigger asChild>
               <Button
                 size="tiny"
                 type="primary"
@@ -149,13 +149,13 @@ const ProjectUpgradeAlert = () => {
               >
                 Upgrade project
               </Button>
-            </TooltipTrigger_Shadcn_>
+            </TooltipTrigger>
             {projectUpgradeDisabled && (
-              <TooltipContent_Shadcn_ side="bottom" align="center">
+              <TooltipContent side="bottom" align="center">
                 Project upgrade is currently disabled
-              </TooltipContent_Shadcn_>
+              </TooltipContent>
             )}
-          </Tooltip_Shadcn_>
+          </Tooltip>
         </AlertDescription_Shadcn_>
       </Alert_Shadcn_>
 

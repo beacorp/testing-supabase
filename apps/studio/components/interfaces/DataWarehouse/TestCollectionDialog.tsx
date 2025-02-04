@@ -21,9 +21,9 @@ import {
   SheetSection,
   SheetTitle,
   SheetTrigger,
-  TooltipContent_Shadcn_,
-  TooltipTrigger_Shadcn_,
-  Tooltip_Shadcn_,
+  TooltipContent,
+  TooltipTrigger,
+  Tooltip,
 } from 'ui'
 import { FormItemLayout } from 'ui-patterns/form/FormItemLayout/FormItemLayout'
 
@@ -86,20 +86,20 @@ export function TestCollectionDialog({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <Tooltip_Shadcn_>
-        <TooltipTrigger_Shadcn_ asChild>
+      <Tooltip>
+        <TooltipTrigger asChild>
           <SheetTrigger asChild>
             <Button disabled={accessTokens.length === 0} type="outline">
               Connect
             </Button>
           </SheetTrigger>
-        </TooltipTrigger_Shadcn_>
+        </TooltipTrigger>
         {accessTokens.length === 0 && (
-          <TooltipContent_Shadcn_>
+          <TooltipContent>
             Create an access token to connect to your collection
-          </TooltipContent_Shadcn_>
+          </TooltipContent>
         )}
-      </Tooltip_Shadcn_>
+      </Tooltip>
 
       <SheetContent size="lg" className="h-screen overflow-auto flex flex-col">
         <SheetHeader>

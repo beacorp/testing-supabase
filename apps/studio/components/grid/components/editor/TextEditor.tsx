@@ -12,9 +12,9 @@ import { useSelectedProject } from 'hooks/misc/useSelectedProject'
 import {
   Button,
   Popover,
-  TooltipContent_Shadcn_,
-  TooltipTrigger_Shadcn_,
-  Tooltip_Shadcn_,
+  TooltipContent,
+  TooltipTrigger,
+  Tooltip,
   cn,
 } from 'ui'
 import ConfirmationModal from 'ui-patterns/Dialogs/ConfirmationModal'
@@ -166,17 +166,17 @@ export const TextEditor = <TRow, TSummaryRow = unknown>({
                     </div>
                   </div>
                   <div className="flex flex-col items-end gap-y-1">
-                    <Tooltip_Shadcn_>
-                      <TooltipTrigger_Shadcn_ asChild>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
                         <Button
                           type="default"
                           className="px-1"
                           onClick={() => onSelectExpand()}
                           icon={<Maximize size={12} strokeWidth={2} />}
                         />
-                      </TooltipTrigger_Shadcn_>
-                      <TooltipContent_Shadcn_ side="bottom">Expand editor</TooltipContent_Shadcn_>
-                    </Tooltip_Shadcn_>
+                      </TooltipTrigger>
+                      <TooltipContent side="bottom">Expand editor</TooltipContent>
+                    </Tooltip>
                     {isNullable && (
                       <Button
                         size="tiny"

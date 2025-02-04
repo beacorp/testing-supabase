@@ -10,9 +10,9 @@ import {
   Button,
   SidePanel,
   Tabs,
-  Tooltip_Shadcn_,
-  TooltipContent_Shadcn_,
-  TooltipTrigger_Shadcn_,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
 } from 'ui'
 import { DocsButton } from '../DocsButton'
 
@@ -153,23 +153,23 @@ const Field = ({
       >
         <span>{field.path}</span>
         {isCopied ? (
-          <Tooltip_Shadcn_>
-            <TooltipTrigger_Shadcn_>
+          <Tooltip>
+            <TooltipTrigger>
               <Check size={14} strokeWidth={3} className="text-brand" />
-            </TooltipTrigger_Shadcn_>
-            <TooltipContent_Shadcn_ side="bottom" className="font-sans">
+            </TooltipTrigger>
+            <TooltipContent side="bottom" className="font-sans">
               Copied
-            </TooltipContent_Shadcn_>
-          </Tooltip_Shadcn_>
+            </TooltipContent>
+          </Tooltip>
         ) : (
-          <Tooltip_Shadcn_>
-            <TooltipTrigger_Shadcn_>
+          <Tooltip>
+            <TooltipTrigger>
               <Clipboard size={14} strokeWidth={1.5} />
-            </TooltipTrigger_Shadcn_>
-            <TooltipContent_Shadcn_ side="bottom" className="font-sans">
+            </TooltipTrigger>
+            <TooltipContent side="bottom" className="font-sans">
               Copy value
-            </TooltipContent_Shadcn_>
-          </Tooltip_Shadcn_>
+            </TooltipContent>
+          </Tooltip>
         )}
       </Table.td>
       <Table.td className="font-mono text-xs !p-2">{field.type}</Table.td>

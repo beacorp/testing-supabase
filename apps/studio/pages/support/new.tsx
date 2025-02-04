@@ -13,7 +13,7 @@ import { useProjectsQuery } from 'data/projects/projects-query'
 import { withAuth } from 'hooks/misc/withAuth'
 import { BASE_PATH } from 'lib/constants'
 import { toast } from 'sonner'
-import { Button, Tooltip_Shadcn_, TooltipContent_Shadcn_, TooltipTrigger_Shadcn_ } from 'ui'
+import { Button, Tooltip, TooltipContent, TooltipTrigger } from 'ui'
 
 const SupportPage = () => {
   const [sentCategory, setSentCategory] = useState<string>()
@@ -42,8 +42,8 @@ const SupportPage = () => {
                   Troubleshooting
                 </Link>
               </Button>
-              <Tooltip_Shadcn_>
-                <TooltipTrigger_Shadcn_ asChild>
+              <Tooltip>
+                <TooltipTrigger asChild>
                   <Button
                     asChild
                     type="default"
@@ -65,11 +65,11 @@ const SupportPage = () => {
                           : 'Active incident ongoing'}
                     </Link>
                   </Button>
-                </TooltipTrigger_Shadcn_>
-                <TooltipContent_Shadcn_ side="bottom" align="center">
+                </TooltipTrigger>
+                <TooltipContent side="bottom" align="center">
                   Check Supabase status page
-                </TooltipContent_Shadcn_>
-              </Tooltip_Shadcn_>
+                </TooltipContent>
+              </Tooltip>
             </div>
           </div>
 

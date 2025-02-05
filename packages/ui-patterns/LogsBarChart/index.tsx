@@ -16,6 +16,7 @@ const CHART_COLORS = {
 type LogsBarChartDatum = {
   timestamp: string
   error_count: number
+  warning_count: number
   ok_count: number
 }
 export const LogsBarChart = ({
@@ -46,6 +47,9 @@ export const LogsBarChart = ({
           {
             error_count: {
               label: 'Errors',
+            },
+            warning_count: {
+              label: 'Warnings',
             },
             ok_count: {
               label: 'Ok',
@@ -99,6 +103,21 @@ export const LogsBarChart = ({
                   focusDataIndex === index || focusDataIndex === null
                     ? CHART_COLORS.RED_1
                     : CHART_COLORS.RED_2
+                }
+              />
+            ))}
+          </Bar>
+
+          {/* Warning bars */}
+          <Bar dataKey="warning_count" fill="hsl(var(--warning-default))" maxBarSize={24} stackId="stack">
+            {data?.map((_entry: LogsBarChartDatum, index: number) => (
+              <Cell
+                className="cursor-pointer transition-colors"
+                key={`warning-${index}`}
+                fill={
+                  focusDataIndex === index || focusDataIndex === null
+                    ? 'hsl(var(--warning-default))'
+                    : 'hsl(var(--warning-500))'
                 }
               />
             ))}

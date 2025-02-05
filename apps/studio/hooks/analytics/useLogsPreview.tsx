@@ -162,7 +162,17 @@ function useLogsPreview({
 
   // chart data
 
-  const chartQuery = useMemo(() => genChartQuery(table, params, filters), [params, filters])
+  const chartQuery = useMemo(() => {
+    const query = genChartQuery(table, params, filters)
+    // Add warning condition for 4xx status codes
+    if (table === 'edge_logs') {
+      return query.replace(
+        'count(*) filter (where response.status_code >= 500) as error_count,',
+        'count(*) filter (where response.status_code >= 500) as error_count,\n    count(*) filter (where response.status_code between 400 and 499) as warning_count,'
+      )
+    }
+    return query
+  }, [params, filters, table])
   const chartUrl = useMemo(() => {
     return `${API_URL}/projects/${projectRef}/analytics/endpoints/logs.all?${genQueryParams({
       iso_timestamp_end: params.iso_timestamp_end,

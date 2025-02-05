@@ -2,6 +2,8 @@ import {
   checkForILIKEClause,
   checkForWildcard,
   checkForWithClause,
+  getErrorCondition,
+  getWarningCondition,
 } from 'components/interfaces/Settings/Logs/Logs.utils'
 import { describe, test, expect } from 'vitest'
 
@@ -94,5 +96,49 @@ describe('checkForWildcard', () => {
 
   test('count(*)', () => {
     expect(checkForWildcard('SELECT count(*) FROM table')).toBe(false)
+  })
+})
+
+describe('getErrorCondition', () => {
+  test('edge_logs', () => {
+    expect(getErrorCondition('edge_logs')).toBe('response.status_code >= 500')
+  })
+
+  test('postgres_logs', () => {
+    expect(getErrorCondition('postgres_logs')).toBe("parsed.error_severity IN ('ERROR', 'FATAL', 'PANIC')")
+  })
+
+  test('auth_logs', () => {
+    expect(getErrorCondition('auth_logs')).toBe("metadata.level = 'error' OR metadata.status >= 500")
+  })
+
+  test('function_edge_logs', () => {
+    expect(getErrorCondition('function_edge_logs')).toBe('response.status_code >= 500')
+  })
+
+  test('function_logs', () => {
+    expect(getErrorCondition('function_logs')).toBe("metadata.level IN ('error', 'fatal')")
+  })
+})
+
+describe('getWarningCondition', () => {
+  test('edge_logs', () => {
+    expect(getWarningCondition('edge_logs')).toBe('response.status_code >= 400 AND response.status_code < 500')
+  })
+
+  test('postgres_logs', () => {
+    expect(getWarningCondition('postgres_logs')).toBe("parsed.error_severity IN ('WARNING')")
+  })
+
+  test('auth_logs', () => {
+    expect(getWarningCondition('auth_logs')).toBe("metadata.level = 'warning' OR (metadata.status >= 400 AND metadata.status < 500)")
+  })
+
+  test('function_edge_logs', () => {
+    expect(getWarningCondition('function_edge_logs')).toBe('response.status_code >= 400 AND response.status_code < 500')
+  })
+
+  test('function_logs', () => {
+    expect(getWarningCondition('function_logs')).toBe("metadata.level = 'warning'")
   })
 })

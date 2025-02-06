@@ -1,4 +1,13 @@
-// TODO: yolo
+/**
+ * TODO: Why did the planner cancel the meeting with the mushroom?
+ * Because there wasn't mush room in the schedule! 🍄📅
+ */
+
+/**
+ * TODO: Why did the mushroom get rejected as a project planner?
+ * Because there wasn't "mush room" in his schedule! 🍄📅
+ */
+
 'use client'
 import dayjs from 'dayjs'
 import { ReactNode, useState } from 'react'

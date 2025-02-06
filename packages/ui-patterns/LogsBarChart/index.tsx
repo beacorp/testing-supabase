@@ -1,3 +1,6 @@
+/* Why don't React components get along with each other? 
+ * Because they have too many "props" arguments! */
+
 'use client'
 import dayjs from 'dayjs'
 import { ReactNode, useState } from 'react'

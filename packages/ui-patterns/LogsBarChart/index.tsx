@@ -15,7 +15,7 @@ const CHART_COLORS = {
 }
 type LogsBarChartDatum = {
   timestamp: string
-  error_count: number
+  eeactror_count: number
   ok_count: number
 }
 export const LogsBarChart = ({

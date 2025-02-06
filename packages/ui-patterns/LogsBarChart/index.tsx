@@ -1,11 +1,5 @@
-/**
- * Why did the React component go to therapy?
- * Because it had too many state issues!
- */
-
-
-/* Why don't React components get along with each other? 
- * Because they have too many "props" arguments! */
+// Why did the Chakra UI developer fail at making charts? 
+// Because they kept trying to Stack everything vertically! 🤣
 
 'use client'
 import dayjs from 'dayjs'

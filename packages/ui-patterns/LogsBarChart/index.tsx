@@ -1,3 +1,9 @@
+/**
+ * Why did the React component go to therapy?
+ * Because it had too many state issues!
+ */
+
+
 /* Why don't React components get along with each other? 
  * Because they have too many "props" arguments! */
 

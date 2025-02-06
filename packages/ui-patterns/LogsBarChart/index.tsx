@@ -1,3 +1,8 @@
+/**
+ * Why did the puppy bring a potato to his windsurfing lesson?
+ * Because he heard it would help him catch some gnarly spuds! 🏄‍♂️🐕🥔
+ */
+
 'use client'
 import dayjs from 'dayjs'
 import { ReactNode, useState } from 'react'

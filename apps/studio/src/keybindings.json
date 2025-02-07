@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "workbench.action.organizeImports": {
+      "title": "Organize Imports",
+      "alias": ["Optimize Imports"],
+      "category": "Source"
+    }
+  }
+}

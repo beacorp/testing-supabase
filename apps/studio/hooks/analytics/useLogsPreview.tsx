@@ -164,7 +164,6 @@ function useLogsPreview({
 
   const chartQuery = useMemo(() => {
     const query = genChartQuery(table, params, filters)
-    // Add warning condition for 4xx status codes
     if (table === 'edge_logs') {
       return query.replace(
         'count(*) filter (where response.status_code >= 500) as error_count,',

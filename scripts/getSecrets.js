@@ -40,5 +40,5 @@ getSecrets(secretName, region).then(async (secrets) => {
   for (const [secretKey, secretValue] of Object.entries(secrets)) {
     secretContent += `${secretKey}="${secretValue}"\n`
   }
-  await fs.writeFile('.env.local.test', secretContent.trim())
+  await fs.writeFile('.env.local', secretContent.trim())
 })

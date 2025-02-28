@@ -14,7 +14,7 @@ const args = parseArgs({
 const secretName = args.values.secretName
 assert(secretName, 'secretName is required')
 
-const region = 'ap-southeast-3'
+const region = 'ap-southeast-2'
 
 const getSecrets = async (name, region) => {
   try {

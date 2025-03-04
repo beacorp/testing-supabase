@@ -30,7 +30,7 @@
 
 Thank you for your interest in [Supabase](https://supabase.com) and your willingness to contribute!
 
-To ensure a positive and inclusive environment, please read our [code of conduct](https://github.com/supabase/.github/blob/main/CODE_OF_CONDUCT.md). We encourage you to explore the existing [issues](https://github.com/supabase/supabase/issues) to see how you can make a meaningful impact. This document will help you setup your development environment.
+To ensure a positive and inclusive evironment, please read our [code of conduct](https://github.com/supabase/.github/blob/main/CODE_OF_CONDUCT.md). We encourage you to explore the existing [issues](https://github.com/supabase/supabase/issues) to see how you can make a meaningful impact. This document will help you setup your development environment.
 
 ### Install dependencies
 
@@ -135,23 +135,9 @@ First, make sure you have the Docker installed on your device. You can download 
 
 #### Get Started
 
-1. Navigate to the `docker` directory in your forked repo
-
-   ```sh
-   cd docker
-   ```
-
-2. Copy the example `env` file
-
-   ```sh
-   cp .env.example .env
-   ```
-
-3. Run docker
-
-   ```sh
-   docker compose up
-   ```
+```sh
+   cd docker &&  cp .env.example .env && docker compose up
+```
 
 This command initializes the containers specified in the `docker-compose.yml` file. It might take a few moments to complete, depending on your computer and internet connection.
 

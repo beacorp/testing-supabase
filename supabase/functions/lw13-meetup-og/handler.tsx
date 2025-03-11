@@ -34,9 +34,10 @@ const STYLING_CONGIF = {
 }
 
 /**
- * Handles an HTTP request to generate an Open Graph image for a meetup event.
+ * Generates an Open Graph image for a meetup event from its ID.
  *
- * This function extracts the meetup identifier from the query parameters of the provided request, retrieves the corresponding meetup data from Supabase, and formats the event details. It then renders an image using React components with specified fonts and styling, uploads the image to Supabase storage, and finally returns a response that fetches the stored image. If any error occurs (such as missing meetup data or issues during the image upload), the function responds with a JSON error message and a 400 status code.
+ * Fetches meetup data from Supabase, renders an image with React, uploads it to storage,
+ * and returns the image URL. Returns a 400 error if the process fails.
  *
  * @param req The HTTP request containing the meetup ID as a query parameter ("id" or "amp;id").
  * @returns A Promise that resolves to an HTTP Response with either the generated image retrieved from storage or an error message.

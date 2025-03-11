@@ -4,6 +4,7 @@ const { SecretsManagerClient, GetSecretValueCommand } = require('@aws-sdk/client
 const { parseArgs } = require('node:util')
 const assert = require('assert')
 
+// Args here
 const args = parseArgs({
   options: {
     secretName: { type: 'string', short: 'n' },

@@ -136,7 +136,7 @@ First, make sure you have the Docker installed on your device. You can download 
 #### Get Started
 
 ```sh
-   cd docker &&  cp .env.example .env && docker compose up
+   cd docker && cp .env.example .env && docker compose up
 ```
 
 This command initializes the containers specified in the `docker-compose.yml` file. It might take a few moments to complete, depending on your computer and internet connection.
